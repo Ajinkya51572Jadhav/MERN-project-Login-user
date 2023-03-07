@@ -27,7 +27,7 @@ const register=(e)=>{
 const {name,email,password,cpassword}=user;
 if(name && email && password && (password===cpassword)){
 alert('register successfully');
-  axios.post('http://localhost:8000/register',user).then((res)=>{
+  axios.post('http://localhost:9000/register',user).then((res)=>{
     alert(res.data.message);
     navigator("/login");
   

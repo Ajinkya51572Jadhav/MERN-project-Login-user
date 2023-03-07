@@ -83,12 +83,13 @@ app.post('/register',(req,res)=>{
     }) 
 
 });
+const port = process.env.PORT || 8000 ;
 
-if(8000=="production")
+if(port=="production")
 app.use(express.static("client/build"));
 
-app.listen(8000 ,()=>{
-    console.log('start port no 8000...');
+app.listen(port ,()=>{
+    console.log('start port no 9000...');
 })
 
 
