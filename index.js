@@ -13,8 +13,8 @@ app.use(cors());
 
  const DB='mongodb://AjinkyaJadhav:AjinkyaJadhav@ac-iu35ayn-shard-00-00.sc9ta1x.mongodb.net:27017,ac-iu35ayn-shard-00-01.sc9ta1x.mongodb.net:27017,ac-iu35ayn-shard-00-02.sc9ta1x.mongodb.net:27017/?ssl=true&replicaSet=atlas-75il8p-shard-0&authSource=admin&retryWrites=true&w=majority';
 // const DB = "mongodb://127.0.0.1:27017/Login";
-mongoose
-  .connect(DB, {
+
+mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -37,6 +37,21 @@ const userSchema = new mongoose.Schema({
 const User = new mongoose.model("NEWDATA", userSchema);
 
 // routes
+
+app.get("/",async(req,res)=>{
+  try {
+      const apicreated = await   User.find();
+        res.send(apicreated);
+        console.log(apicreated);
+           
+  } catch (error) {
+      console.log(error);
+  }
+          
+ });
+
+
+
 
 
 app.post("/register", (req, res) => {
