@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || `https://backend-deploy-production-ccc9.up.railway.app`;
 
 const app = express();
 app.use(express.json());
@@ -48,6 +48,7 @@ app.get("/",async(req,res)=>{
       console.log(error);
   }
           
+
  });
 
 
@@ -77,6 +78,7 @@ app.post("/register", (req, res) => {
       });
     }
   });
+  
 });
 
 
@@ -97,5 +99,5 @@ app.post("/login", (req, res) => {
 
 
 app.listen(port, () => {
-  console.log("start port no 9000...");
+  console.log("start port no rawaily start...");
 });
