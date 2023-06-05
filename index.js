@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 const bodyParser = require("body-parser");
-const port = process.env.PORT || `https://backend-deploy-production-ccc9.up.railway.app`;
+const port = process.env.PORT || 4000;
 
 const app = express();
 app.use(express.json());
@@ -99,5 +99,5 @@ app.post("/login", (req, res) => {
 
 
 app.listen(port, () => {
-  console.log("start port no rawaily start...");
+  console.log("start port 4000...");
 });
